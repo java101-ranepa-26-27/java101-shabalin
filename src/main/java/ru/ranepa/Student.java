@@ -31,10 +31,23 @@ public class Student {
         }
         return (double) sum / marks.size();
     }
+    public String status() {
+        double avg = averageMarks();
+        if (avg >= 4.5) {
+            return "Отличник";
+        } else if (avg >= 3.5) {
+            return "Хорошист";
+        } else if (avg >= 2.5) {
+            return "Троечник";
+        } else {
+            return "Двоечник";
+        }
+    }
 
     public void printReport() {
         System.out.println("Имя: " + name);
         System.out.println("Оценки: " + marks);
         System.out.println("Средний балл:" + averageMarks());
+        System.out.println("Статус: " + status());
     }
 }
