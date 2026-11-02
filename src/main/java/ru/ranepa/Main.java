@@ -5,29 +5,22 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
         System.out.println("Введи имя:");
-        String name = scanner.next();
-
+        Scanner input = new Scanner(System.in);
+        String name = input.nextLine();
         List<Integer> marks = new ArrayList<>();
         System.out.println("Вводи оценки (2-5). Для завершения введи 0:");
 
-       /* while (true) {
-            int mark = scanner.nextInt();
+        while (true) {
+            int mark = input.nextInt();
             if (mark == 0) {
                 break;
             }
             if (mark >= 2 && mark <= 5) {
                 marks.add(mark);
             } else {
-                System.out.println("Оценка должна быть от 2 до 5. Попробуй снова:");
+                System.out.println("Оценка должна быть от 2 до 5. Для завершения введи 0:");
             }
-        }*/
-        for(int i = 0; i <= 9; i++)
-        {
-            int mark = scanner.nextInt();
-            marks.add(mark);
         }
 
         Student student = new Student(name, marks);

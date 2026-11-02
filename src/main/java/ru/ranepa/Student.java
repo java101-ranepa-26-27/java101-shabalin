@@ -1,35 +1,24 @@
 package ru.ranepa;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Student {
-    String name;
-    List<Integer> marks;
+    public String name;
+    public List<Integer> marks;
 
     public Student(String name, List<Integer> marks) {
         this.name = name;
         this.marks = marks;
     }
 
-    public Student(String name) {
-        this.name = name;
-        this.marks = new ArrayList<>();
-    }
-
-    public Student() {
-        this.name = "Неизвестно";
-        this.marks = new ArrayList<>();
-    }
-
     public double averageMarks() {
-        if (marks == null || marks.isEmpty()) {
+        if (marks.isEmpty()) {
             return 0.0;
         }
-        int sum = 0;
+        double sum = 0;
         for (int mark : marks) {
-            sum += mark;
+            sum =  sum + mark;
         }
-        return (double) sum / marks.size();
+        return sum / marks.size();
     }
     public String status() {
         double avg = averageMarks();
